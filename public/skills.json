@@ -1,0 +1,62 @@
+[
+    {
+        "id": "64f5c503a23d13133c0984e3",
+        "name": "HTML",
+        "img": "https://i.ibb.co/x7K0XVJ/html.png"
+    },
+    {
+        "id": "64f5c503db896aa40501a622",
+        "name": "CSS",
+        "img": "https://i.ibb.co/THBn4yK/CSS-removebg-preview-1.png"
+    },
+    {
+        "id": "64f5c5036716eb48316d5e9f",
+        "name": "Bootstrap",
+        "img": "https://i.ibb.co/pb23WfQ/bootstrap-removebg-preview.png"
+    },
+    {
+        "id": "64f5c503f0ec5aa15c74131e",
+        "name": "Tailwind CSS",
+        "img": "https://i.ibb.co/XxfbJ66/tailwind-removebg-preview.png"
+    },
+    {
+        "id": "64f5c503c9434925309de439",
+        "name": "Javascript",
+        "img": "https://i.ibb.co/6ZCv0pt/javascript-removebg-preview.png"
+    },
+    {
+        "id": "64f5c50314ef3a53091a4d03",
+        "name": "React js",
+        "img": "https://i.ibb.co/RQtb6Bp/react-removebg-preview.png"
+    },
+    {
+        "id": "64f5c503feb2ca7cbcafda11",
+        "name": "Firebase",
+        "img": "https://i.ibb.co/DGXb3DP/firebase-removebg-preview.png"
+    },
+    {
+        "id": "64f5c503806aa7f113a27c1c",
+        "name": "Node js",
+        "img": "https://i.ibb.co/v426rfh/node-removebg-preview.png"
+    },
+    {
+        "id": "64f5c503806aa7f113a27c1c",
+        "name": "Express js",
+        "img": "https://i.ibb.co/8PG84FF/express-removebg-preview.png"
+    },
+    {
+        "id": "64f5c503806aa7f113a27c1c",
+        "name": "Mongodb",
+        "img": "https://i.ibb.co/C2yrPK5/mongodb-removebg-preview.png"
+    },
+    {
+        "id": "64f5c503806aa7f113a27c1c",
+        "name": "JWT",
+        "img": "https://i.ibb.co/jwQhfxX/jwt-removebg-preview.png"
+    },
+    {
+        "id": "64f5c503806aa7f113a27c1c",
+        "name": "Github",
+        "img": "https://i.ibb.co/D1gnkWz/github-removebg-preview.png"
+    }
+]

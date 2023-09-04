@@ -1,0 +1,20 @@
+.items a {
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.light {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.dark {
+    background-color: #333;
+    color: #fff;
+}

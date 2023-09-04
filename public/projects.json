@@ -1,0 +1,20 @@
+[
+    {
+        "id": "64f5f1d6a3a3aeb64339cd7d",
+        "projectName": "Doctors Portal",
+        "clientSite": "https://github.com/AbdulSatterism/doctors-portal-client",
+        "serverSite": "https://github.com/AbdulSatterism/doctors-portal-server",
+        "liveSite": "https://doctors-portal-feddf.web.app/",
+        "img": "https://i.ibb.co/MphTFbz/doctors-portal.png",
+        "description": "Doctors portal is a full stack web application user can sign up or login with email and password or google login. Doctors portal is a web application which use dental hospital. Here used React js | Javascript | Tailwind Css | Node js | Mongodb etc."
+    },
+    {
+        "id": "64f5f1d6b5800eb7523288fc",
+        "projectName": "Used Mobile Bazar",
+        "clientSite": "https://github.com/AbdulSatterism/used-mobile-bazar-client",
+        "serverSite": "https://github.com/AbdulSatterism/used-mobile-bazar-server",
+        "liveSite": "https://used-mobile-bazar.web.app/",
+        "img": "https://i.ibb.co/z5dLV3r/used-Mobile.png",
+        "description": "Used Mobile Bazar is a full stack web application user can sign up or login with email and password or google login.Used Mobile Bazar is a web application which use Second hand mobile bazar. Here used React js | Javascript | Tailwind Css | Node js | Mongodb etc."
+    }
+]
