@@ -2,6 +2,7 @@ import React, { } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css'
 
+
 const Header = () => {
 
     const menuItems = <>
@@ -25,7 +26,7 @@ const Header = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <button className='text-3xl text-orange-500 font-bold '>
+                    <button className='text-3xl text-orange-500 text-justify font-semibold '>
                         Abdul Satter
                     </button>
                 </div>
