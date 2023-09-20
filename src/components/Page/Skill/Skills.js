@@ -11,7 +11,7 @@ const Skills = () => {
     }, [])
 
     return (
-        <div className=' bg-zinc-100 '>
+        <div className='  '>
             <h1 className='text-center py-4 text-2xl text-slate-700 '>Skills</h1>
 
             <div className='grid container mx-auto gap-2 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1'>
