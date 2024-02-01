@@ -24,8 +24,8 @@ const Signup = () => {
                 updateUserProfile(name)
                     .then(() => {
                         form.reset()
-                        console.log(user)
-                        navigate('/')
+                        // console.log(user)
+                        saveUserDB(name, email)
                     }).catch((err) => {
                         setError(err.message)
                     });
@@ -37,14 +37,34 @@ const Signup = () => {
             });
     }
 
+    //save user in database
+    const saveUserDB = (name, email) => {
+        const user = { name, email };
+        fetch('http://localhost:5000/user', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('User created successfully');
+                    navigate('/')
+                }
+
+            })
+    }
+
     return (
-        <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col md:flex-row-reverse">
+        <div className="min-h-screen hero bg-base-200">
+            <div className="flex-col hero-content md:flex-row-reverse">
                 <div className="text-center md:w-1/2 lg:text-left">
-                    <h1 className="text-5xl text-center font-bold">Login</h1>
+                    <h1 className="text-5xl font-bold text-center">Login</h1>
                     <img src={login} alt="" />
                 </div>
-                <div className="card  md:w-1/2 max-w-sm shadow-2xl bg-base-100">
+                <div className="max-w-sm shadow-2xl card md:w-1/2 bg-base-100">
                     <form onSubmit={handleSignup} className="card-body">
 
                         <div className="">
@@ -69,13 +89,13 @@ const Signup = () => {
                         </div>
 
 
-                        <div className=" mt-6">
-                            <input className="btn btn-primary w-full" type="submit" value="Login" />
+                        <div className="mt-6 ">
+                            <input className="w-full btn btn-primary" type="submit" value="Login" />
                         </div>
 
-                        <p className='text-center mx-auto'><small className='text-red-600'>{error}</small></p>
+                        <p className='mx-auto text-center'><small className='text-red-600'>{error}</small></p>
 
-                        <p className='text-center mx-auto'><small >Have an account? <Link to='/login' className='text-gray-500'>Please Login</Link> </small></p>
+                        <p className='mx-auto text-center'><small >Have an account? <Link to='/login' className='text-gray-500'>Please Login</Link> </small></p>
                     </form>
 
                 </div>

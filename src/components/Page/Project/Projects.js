@@ -5,19 +5,19 @@ const Projects = () => {
     const [projectElement, setProjectElement] = useState([]);
 
     useEffect(() => {
-        fetch('projects.json')
+        fetch('http://localhost:5000/project')
             .then(res => res.json())
             .then(data => setProjectElement(data))
     }, [])
 
     return (
         <div className=''>
-            <h1 className='text-center py-4 text-2xl text-slate-900 '>Projects</h1>
+            <h1 className='py-4 text-2xl text-center text-slate-900 '>Projects</h1>
 
-            <div className='  container mx-auto '>
+            <div className='container mx-auto '>
                 {
                     projectElement.map(project => <Project
-                        key={project.id}
+                        key={project._id}
                         project={project}
                     ></Project>)
                 }

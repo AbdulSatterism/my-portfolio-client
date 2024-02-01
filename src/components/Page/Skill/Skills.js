@@ -5,7 +5,7 @@ const Skills = () => {
     const [skills, setSkills] = useState([]);
 
     useEffect(() => {
-        fetch('skills.json')
+        fetch('http://localhost:5000/skills')
             .then(res => res.json())
             .then(data => setSkills(data))
     }, [])

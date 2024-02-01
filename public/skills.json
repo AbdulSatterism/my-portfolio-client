@@ -1,61 +1,49 @@
 [
     {
-        "id": "1",
         "name": "HTML",
         "img": "https://i.ibb.co/x7K0XVJ/html.png"
     },
     {
-        "id": "2",
         "name": "CSS",
         "img": "https://i.ibb.co/THBn4yK/CSS-removebg-preview-1.png"
     },
     {
-        "id": "3",
         "name": "Bootstrap",
         "img": "https://i.ibb.co/pb23WfQ/bootstrap-removebg-preview.png"
     },
     {
-        "id": "4",
         "name": "Tailwind CSS",
         "img": "https://i.ibb.co/XxfbJ66/tailwind-removebg-preview.png"
     },
     {
-        "id": "5",
         "name": "Javascript",
         "img": "https://i.ibb.co/6ZCv0pt/javascript-removebg-preview.png"
     },
     {
-        "id": "6",
         "name": "React js",
         "img": "https://i.ibb.co/RQtb6Bp/react-removebg-preview.png"
     },
     {
-        "id": "7",
         "name": "Firebase",
         "img": "https://i.ibb.co/DGXb3DP/firebase-removebg-preview.png"
     },
     {
-        "id": "8",
         "name": "Node js",
         "img": "https://i.ibb.co/v426rfh/node-removebg-preview.png"
     },
     {
-        "id": "9",
         "name": "Express js",
         "img": "https://i.ibb.co/8PG84FF/express-removebg-preview.png"
     },
     {
-        "id": "10",
         "name": "Mongodb",
         "img": "https://i.ibb.co/C2yrPK5/mongodb-removebg-preview.png"
     },
     {
-        "id": "11",
         "name": "JWT",
         "img": "https://i.ibb.co/jwQhfxX/jwt-removebg-preview.png"
     },
     {
-        "id": "12",
         "name": "Github",
         "img": "https://i.ibb.co/D1gnkWz/github-removebg-preview.png"
     }

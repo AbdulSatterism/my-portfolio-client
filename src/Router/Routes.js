@@ -6,6 +6,8 @@ import Projects from "../components/Page/Project/Projects";
 import Login from "../components/Page/Shared/Login/Login";
 import Signup from "../components/Page/Shared/Signup/Signup";
 import PrivateRoute from "./PrivateRoute";
+import DashboardLayout from "../Layout/DashboardLayout";
+import AdminHome from "../components/Page/Dashboard/AdminHome/AdminHome";
 
 const routes = createBrowserRouter([
     {
@@ -30,13 +32,24 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/signup',
-                element: <PrivateRoute>
-                    <Signup></Signup>
-                </PrivateRoute>
+                element: <Signup></Signup>
             }
 
         ]
+    },
+
+    {
+        path: 'admin',
+        element: <DashboardLayout></DashboardLayout>,
+        children: [
+            {
+                path: 'adminHome',
+                element: <AdminHome></AdminHome>
+            },
+
+        ]
     }
+
 ]);
 
 export default routes;
