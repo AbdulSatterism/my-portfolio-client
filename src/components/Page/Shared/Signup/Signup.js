@@ -90,7 +90,7 @@ const Signup = () => {
 
 
                         <div className="mt-6 ">
-                            <input className="w-full btn btn-primary" type="submit" value="Login" />
+                            <input className="w-full btn btn-primary" type="submit" value="Signup" />
                         </div>
 
                         <p className='mx-auto text-center'><small className='text-red-600'>{error}</small></p>

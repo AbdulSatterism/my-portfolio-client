@@ -11,7 +11,7 @@ const Footer = () => {
                 <p className="font-bold">
                     MD. Abdul Satter <br />Full stack web developer
                 </p>
-                <p>Copyright ©{date} -All right by abdulSatter</p>
+                <p>Copyright ©{date} -All right by abdul Satter</p>
             </div>
             <div>
                 <div className="grid grid-flow-col gap-4">

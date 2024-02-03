@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Skill from './Skill';
+import useSkill from '../../../hooks/useSkill';
 
 const Skills = () => {
-    const [skills, setSkills] = useState([]);
-
-    useEffect(() => {
-        fetch('http://localhost:5000/skills')
-            .then(res => res.json())
-            .then(data => setSkills(data))
-    }, [])
+    const [skills] = useSkill();
 
     return (
         <div className='  '>
@@ -17,7 +12,7 @@ const Skills = () => {
             <div className='grid container mx-auto gap-2 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1'>
                 {
                     skills.map(skill => <Skill
-                        key={skill.id}
+                        key={skill._id}
                         skill={skill}
                     ></Skill>)
                 }

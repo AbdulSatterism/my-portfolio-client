@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Project from './Project';
+import useProject from '../../../hooks/useProject';
 
 const Projects = () => {
-    const [projectElement, setProjectElement] = useState([]);
-
-    useEffect(() => {
-        fetch('http://localhost:5000/project')
-            .then(res => res.json())
-            .then(data => setProjectElement(data))
-    }, [])
+    const [projects] = useProject()
 
     return (
         <div className=''>
@@ -16,7 +11,7 @@ const Projects = () => {
 
             <div className='container mx-auto '>
                 {
-                    projectElement.map(project => <Project
+                    projects.map(project => <Project
                         key={project._id}
                         project={project}
                     ></Project>)
