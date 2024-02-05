@@ -3,9 +3,11 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 
 const UpdateProject = () => {
     const project = useLoaderData();
+    const axiosSecure = useAxiosSecure();
     const { register, handleSubmit, reset } = useForm();
     const navigate = useNavigate();
 
@@ -26,7 +28,7 @@ const UpdateProject = () => {
                     const { projectName, description, } = data;
                     const updateProject = { projectName, description, img: imgURL }
 
-                    axios.put(`http://localhost:5000/update/${project?._id}`, updateProject)
+                    axiosSecure.put(`/update/${project?._id}`, updateProject)
 
                         .then(data => {
                             reset();

@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FaBars, FaHome, FaUsers } from 'react-icons/fa';
 import { GoProjectSymlink } from "react-icons/go";
 import { SiSkillshare } from "react-icons/si";
 import { MdManageAccounts } from "react-icons/md";
 import { Outlet } from 'react-router';
 import { NavLink } from 'react-router-dom';
+import useAdmin from '../hooks/useAdmin';
 
 const DashboardLayout = () => {
-
-    const [isAdmin] = useState({ admin: "admin" })
+    const [isAdmin] = useAdmin();
 
     return (
         <div className="drawer lg:drawer-open">
@@ -25,21 +25,18 @@ const DashboardLayout = () => {
                     {/* Sidebar content here */}
                     {
                         isAdmin && <>
-
                             <li className='text-whit'><NavLink to='/admin/admin-home' ><FaHome></FaHome>Admin Home</NavLink></li>
                             <li className=' '><NavLink to='/admin/all-user' ><FaUsers></FaUsers>All Member</NavLink></li>
                             <li className=' '><NavLink to='/admin/add-project' ><GoProjectSymlink></GoProjectSymlink> Add Project</NavLink> </li>
                             <li className=' '><NavLink to='/admin/add-skill' > <SiSkillshare></SiSkillshare>Add Skill </NavLink></li>
                             <li className=' '><NavLink to='/admin/manage-project' ><MdManageAccounts></MdManageAccounts>manage project </NavLink></li>
                             <li className=' '><NavLink to='/admin/manage-skill' ><MdManageAccounts></MdManageAccounts> manage skill </NavLink></li>
+
+                            <div className="divider"></div>
+
+                            <li className=' '><NavLink to='/'><FaHome></FaHome>Home</NavLink></li>
                         </>
                     }
-
-
-                    <div className="divider"></div>
-
-                    <li className=' '><NavLink to='/'><FaHome></FaHome>Home</NavLink></li>
-
                 </ul>
 
             </div>

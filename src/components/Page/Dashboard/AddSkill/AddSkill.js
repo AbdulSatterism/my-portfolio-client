@@ -2,9 +2,11 @@ import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 
 const AddSkill = () => {
     const { register, handleSubmit, reset } = useForm();
+    const axiosSecure = useAxiosSecure();
 
     const imageHostingToken = process.env.REACT_APP_Image_Token;
     const imageHostingURL = `https://api.imgbb.com/1/upload?key=${imageHostingToken}`;
@@ -23,7 +25,7 @@ const AddSkill = () => {
                     const newSkill = { name: data.name, img: imgURL }
                     // console.log(newSkill)
                     // post new skill
-                    axios.post(`http://localhost:5000/skill`, newSkill)
+                    axiosSecure.post(`/skill`, newSkill)
                         .then(data => {
                             if (data.data.insertedId) {
                                 // console.log(data.data)

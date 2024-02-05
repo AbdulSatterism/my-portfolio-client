@@ -2,19 +2,18 @@ import React from 'react';
 import useProject from '../../../../hooks/useProject';
 import { FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 
 const ManageProject = () => {
     const [projects, refetch] = useProject();
+    const axiosSecure = useAxiosSecure();
 
     const handleDelete = (project) => {
         const sureMessage = window.confirm('Are you sure want to delete this project')
         if (sureMessage) {
-            fetch(`http://localhost:5000/project/delete/${project._id}`, {
-                method: "DELETE"
-            })
-                .then(res => res.json())
+            axiosSecure.delete(`/project/delete/${project._id}`)
                 .then(data => {
-                    if (data.modifiedCount) {
+                    if (data.data.modifiedCount) {
                         refetch()
                         alert(`Now ${project.name} is permanently delete`)
                     }

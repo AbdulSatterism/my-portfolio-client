@@ -13,6 +13,8 @@ import ManageProject from "../components/Page/Dashboard/ManageProject/ManageProj
 import ManageSkill from "../components/Page/Dashboard/ManageSkill/ManageSkill";
 import AdminHome from "../components/Page/Dashboard/AdminHome/AdminHome";
 import UpdateProject from "../components/Page/Dashboard/UpdateProject/UpdateProject";
+import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
 
 const routes = createBrowserRouter([
     {
@@ -37,7 +39,9 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/signup',
-                element: <Signup></Signup>
+                element: <PrivateRoute>
+                    <Signup></Signup>
+                </PrivateRoute>
             }
 
         ]
@@ -45,31 +49,33 @@ const routes = createBrowserRouter([
 
     {
         path: 'admin',
-        element: <DashboardLayout></DashboardLayout>,
+        element: <PrivateRoute>
+            <AdminRoute> <DashboardLayout></DashboardLayout></AdminRoute>
+        </PrivateRoute>,
         children: [
             {
                 path: 'admin-home',
-                element: <AdminHome></AdminHome>
+                element: <AdminRoute> <AdminHome></AdminHome></AdminRoute>
             },
             {
                 path: 'all-user',
-                element: <AllUser></AllUser>
+                element: <AdminRoute><AllUser></AllUser></AdminRoute>
             },
             {
                 path: 'add-project',
-                element: <AddProject></AddProject>
+                element: <AdminRoute><AddProject></AddProject></AdminRoute>
             },
             {
                 path: 'add-skill',
-                element: <AddSkill></AddSkill>
+                element: <AdminRoute><AddSkill></AddSkill></AdminRoute>
             },
             {
                 path: 'manage-project',
-                element: <ManageProject></ManageProject>
+                element: <AdminRoute><ManageProject></ManageProject></AdminRoute>
             },
             {
                 path: 'manage-skill',
-                element: <ManageSkill></ManageSkill>
+                element: <AdminRoute><ManageSkill></ManageSkill></AdminRoute>
             },
             {
                 path: 'update/:id',

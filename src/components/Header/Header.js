@@ -4,9 +4,9 @@ import './Header.css'
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 
-
 const Header = () => {
     const { logOut, user } = useContext(AuthContext);
+
 
     const handleLogOut = () => {
         logOut()
@@ -19,11 +19,13 @@ const Header = () => {
         <li className='font-semibold  text-white items '><Link to='/skill'>Skill</Link> </li>
         <li className='font-semibold text-white  items '><Link to='/project'>Project</Link> </li>
         <li className='font-semibold  text-white items '><Link to='/'>Contact</Link> </li>
-        <li className='font-semibold text-white  items '><Link to='/admin'>Admin</Link> </li>
 
         {
             user &&
-            <button onClick={handleLogOut} className="btn btn-ghost">Logout</button>
+            <>
+                <li className='font-semibold text-white  items '><Link to='/admin'>Admin</Link> </li>
+                <button onClick={handleLogOut} className="btn bg-orange-300 text-white">Logout</button>
+            </>
         }
 
     </>

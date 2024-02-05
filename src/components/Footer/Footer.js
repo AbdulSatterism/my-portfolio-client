@@ -3,7 +3,7 @@ import { FaLinkedinIn, FaGithub, FaFacebookF } from 'react-icons/fa';
 
 const Footer = () => {
     const date = new Date().getFullYear();
-    console.log(date)
+
 
     return (
         <footer className="p-16 mt-16 text-white footer footer-center bg-gradient-to-t from-blue-950 to-black">

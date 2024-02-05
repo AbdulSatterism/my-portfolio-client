@@ -1,24 +1,24 @@
 import React from 'react';
 import { FaTrashAlt, FaUserShield } from 'react-icons/fa';
 import { useQuery } from 'react-query';
+import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 
 const AllUser = () => {
+    const axiosSecure = useAxiosSecure();
+
     const { data: users = [], refetch } = useQuery({
         queryKey: ['user'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/user`);
-            return res.json()
+            const res = await axiosSecure.get(`/user`);
+            return res.data;
         }
     })
 
 
     const handleMakeAdmin = (user) => {
-        fetch(`http://localhost:5000/user/admin/${user._id}`, {
-            method: "PATCH"
-        })
-            .then(res => res.json())
+        axiosSecure.patch(`/user/admin/${user._id}`)
             .then(data => {
-                if (data.modifiedCount) {
+                if (data.data.modifiedCount) {
                     refetch()
                     alert(`Now ${user.name} is admin...`)
                 }
@@ -30,13 +30,9 @@ const AllUser = () => {
     const handleDelete = (user) => {
         const sureMessage = window.confirm('Are you sure want to delete this user')
         if (sureMessage) {
-            fetch(`http://localhost:5000/user/delete/${user._id}`, {
-                method: "DELETE"
-            })
-                .then(res => res.json())
+            axiosSecure.delete(`/user/delete/${user._id}`)
                 .then(data => {
-
-                    if (data.modifiedCount) {
+                    if (data.data.modifiedCount) {
                         refetch()
                         alert(`Now ${user.name} is permanently delete`)
                     }

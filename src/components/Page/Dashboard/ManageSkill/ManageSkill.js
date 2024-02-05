@@ -1,22 +1,18 @@
 import React from 'react';
 import useSkill from '../../../../hooks/useSkill';
 import { FaTrashAlt } from 'react-icons/fa';
+import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 
 const ManageSkill = () => {
     const [skills, refetch] = useSkill();
+    const axiosSecure = useAxiosSecure();
 
-    const handleUpdate = (skill) => {
-
-    }
     const handleDelete = (skill) => {
         const sureMessage = window.confirm('Are you sure want to delete this skill')
         if (sureMessage) {
-            fetch(`http://localhost:5000/skill/delete/${skill._id}`, {
-                method: "DELETE"
-            })
-                .then(res => res.json())
+            axiosSecure.delete(`/skill/delete/${skill._id}`)
                 .then(data => {
-                    if (data.modifiedCount) {
+                    if (data.data.modifiedCount) {
                         refetch()
                         alert(`Now ${skill.name} is permanently delete`)
                     }
@@ -57,7 +53,7 @@ const ManageSkill = () => {
                                     <div className="font-bold">{skill.name}</div>
                                 </td>
                                 <td>
-                                    <button onClick={() => handleUpdate(skill)} className="btn btn-primary btn-sm  text-white">update </button>
+                                    <button className="btn btn-primary btn-sm  text-white">update </button>
                                 </td>
                                 <td>
                                     <button onClick={() => handleDelete(skill)} className="btn btn-danger btn-sm  text-white"><FaTrashAlt></FaTrashAlt> </button>
