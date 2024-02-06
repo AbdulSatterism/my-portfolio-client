@@ -4,7 +4,7 @@ const useProject = () => {
     const { data: projects = [], refetch } = useQuery({
         queryKey: ['project'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/project`);
+            const res = await fetch(`https://my-portfolio-server-ffbv.onrender.com/project`);
             return res.json()
         }
     })

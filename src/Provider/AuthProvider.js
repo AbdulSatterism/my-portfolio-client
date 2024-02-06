@@ -39,7 +39,7 @@ const AuthProvider = ({ children }) => {
             if (currentUser) {
                 //store token
                 const userInfo = { email: currentUser?.email }
-                axios.post('http://localhost:5000/jwt', userInfo)
+                axios.post('https://my-portfolio-server-ffbv.onrender.com/jwt', userInfo)
                     .then(res => {
                         if (res.data.token) {
                             localStorage.setItem('access-token', res.data.token);

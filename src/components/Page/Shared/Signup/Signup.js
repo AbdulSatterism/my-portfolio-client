@@ -40,7 +40,7 @@ const Signup = () => {
     //save user in database
     const saveUserDB = (name, email) => {
         const user = { name, email };
-        fetch('http://localhost:5000/user', {
+        fetch('https://my-portfolio-server-ffbv.onrender.com/user', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

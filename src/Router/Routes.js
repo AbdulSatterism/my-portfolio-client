@@ -80,7 +80,7 @@ const routes = createBrowserRouter([
             {
                 path: 'update/:id',
                 element: <UpdateProject></UpdateProject>,
-                loader: ({ params }) => fetch(`http://localhost:5000/update/${params.id}`),
+                loader: ({ params }) => fetch(`https://my-portfolio-server-ffbv.onrender.com/update/${params.id}`),
             },
 
         ]
