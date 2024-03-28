@@ -2,11 +2,12 @@ import React from 'react';
 import { FaTrashAlt, FaUserShield } from 'react-icons/fa';
 import { useQuery } from 'react-query';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
+import Loading from '../../../Loading/Loading';
 
 const AllUser = () => {
     const axiosSecure = useAxiosSecure();
 
-    const { data: users = [], refetch } = useQuery({
+    const { data: users = [], refetch, isLoading } = useQuery({
         queryKey: ['user'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/user`);
@@ -41,7 +42,9 @@ const AllUser = () => {
 
     }
 
-
+    if (isLoading) {
+        return <Loading></Loading>
+    }
 
     return (
         <div className='w-full'>

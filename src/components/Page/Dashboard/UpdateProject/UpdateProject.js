@@ -25,14 +25,15 @@ const UpdateProject = () => {
             .then(imageRes => {
                 if (imageRes.success) {
                     const imgURL = imageRes.data.display_url;
-                    const { projectName, description, } = data;
-                    const updateProject = { projectName, description, img: imgURL }
+                    const { projectName, description, clientSite, serverSite, liveSite } = data;
+                    const updateProject = { projectName, description, img: imgURL, clientSite, serverSite, liveSite }
 
                     axiosSecure.put(`/update/${project?._id}`, updateProject)
 
                         .then(data => {
                             reset();
                             if (data.data.modifiedCount > 0) {
+
                                 Swal.fire({
                                     position: 'top-center',
                                     icon: 'success',
@@ -70,7 +71,7 @@ const UpdateProject = () => {
                             <span className="label-text font-semibold">client site link* </span>
                         </label>
                         <input type="url" placeholder="url"
-                            defaultValue={project?.clientSite} readOnly
+                            defaultValue={project?.clientSite}
                             {...register("clientSite", { required: true })}
                             className="input input-bordered w-full  " />
 
@@ -80,7 +81,7 @@ const UpdateProject = () => {
                             <span className="label-text font-semibold">Server site link* </span>
                         </label>
                         <input type="url" placeholder="url"
-                            defaultValue={project?.serverSite} readOnly
+                            defaultValue={project?.serverSite}
                             {...register("serverSite", { required: true })}
                             className="input input-bordered w-full  " />
 
@@ -90,7 +91,7 @@ const UpdateProject = () => {
                             <span className="label-text font-semibold">LIve site link* </span>
                         </label>
                         <input type="url" placeholder="url"
-                            defaultValue={project?.liveSite} readOnly
+                            defaultValue={project?.liveSite}
                             {...register("liveSite", { required: true })}
                             className="input input-bordered w-full  " />
 
